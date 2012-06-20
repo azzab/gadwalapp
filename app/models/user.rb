@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  embeds_many :days
   extend Rolify
   rolify
 

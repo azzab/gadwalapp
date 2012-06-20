@@ -32,7 +32,8 @@ module Gadwalapp
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
     config.autoload_paths += %W(#{config.root}/lib)
-
+    # Heroku requires this to be false
+    config.assets.initialize_on_precompile=false
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
