@@ -1,4 +1,4 @@
-<h1>Week</h1>
+<h1>My Week</h1>
 
 <table class="table table-bordered">
   <tr>
@@ -9,11 +9,11 @@
     <th>Maghrib</th>
     <th>Isha</th>
     <th>Quran</th>
+    <th>Quantity</th>
     <th>Reading</th>
     <th>Sonan</th>
     <th>Seyam</th>
     <th>Qeyam</th>
-    <th>Quranquantity</th>
     <th></th>
     <th></th>
     <th></th>
@@ -42,4 +42,4 @@
 </table>
 <br />
 
-<%= link_to 'New Day', new_user_day_path %>
+<%= link_to 'New Day', new_user_day_path(@user) %>

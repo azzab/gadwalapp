@@ -1,9 +1,11 @@
 Gadwalapp::Application.routes.draw do
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => "days#index"
   end
-  root :to => "home#index"
+  #resources :days
+  root :to => redirect("/users/sign_in")
+  
   devise_for :users
   resources :users, :only => [:show, :index] do
     resources :days

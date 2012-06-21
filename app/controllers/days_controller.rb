@@ -3,16 +3,16 @@ class DaysController < ApplicationController
   # GET /days.json
   before_filter :get_user
   def get_user
-      @user = User.find(params[:user_id])
+       @user = User.find(current_user.id)
   end
   def index
-    #@days = @user.days.all
-    @days = @user.days.paginate(:page => params[:page], :per_page =>7)
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @days }
-    end
+     #@days = @user.days.all
+      @days = @user.days.paginate(:page => params[:page], :per_page =>7)
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @days }
+      end
   end
 
   # GET /days/1
