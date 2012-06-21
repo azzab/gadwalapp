@@ -18,7 +18,7 @@ class DaysController < ApplicationController
   # GET /days/1
   # GET /days/1.json
   def show
-    @day = Day.find(params[:id])
+    @day = @user.days.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,7 +39,7 @@ class DaysController < ApplicationController
 
   # GET /days/1/edit
   def edit
-    @day = Day.find(params[:id])
+    @day = @user.days.find(params[:id])
   end
 
   # POST /days
@@ -61,11 +61,11 @@ class DaysController < ApplicationController
   # PUT /days/1
   # PUT /days/1.json
   def update
-    @day = Day.find(params[:id])
+    @day = @user.days.find(params[:id])
 
     respond_to do |format|
       if @day.update_attributes(params[:day])
-        format.html { redirect_to @day, notice: 'Day was successfully updated.' }
+        format.html { redirect_to user_days_path(@user), notice: 'Day was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,11 +77,11 @@ class DaysController < ApplicationController
   # DELETE /days/1
   # DELETE /days/1.json
   def destroy
-    @day = Day.find(params[:id])
+    @day = @user.days.find(params[:id])
     @day.destroy
 
     respond_to do |format|
-      format.html { redirect_to days_url }
+      format.html { redirect_to user_days_path(@user) }
       format.json { head :no_content }
     end
   end
