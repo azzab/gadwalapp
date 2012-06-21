@@ -1,6 +1,6 @@
-<h1>Listing days</h1>
+<h1>Week</h1>
 
-<table>
+<table class="table table-bordered">
   <tr>
     <th>Day</th>
     <th>Fajer</th>
@@ -33,13 +33,13 @@
     <td><%= day.seyam %></td>
     <td><%= day.qeyam %></td>
     <td><%= day.quranQuantity %></td>
-    <td><%= link_to 'Show', day %></td>
-    <td><%= link_to 'Edit', edit_day_path(day) %></td>
-    <td><%= link_to 'Destroy', day, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', [@user,day] %></td>
+    <td><%= link_to 'Edit', edit_user_day_path(@user,day) %></td>
+    <td><%= link_to 'Destroy', [@user,day], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
-</table>
 
+</table>
 <br />
 
 <%= link_to 'New Day', new_user_day_path %>

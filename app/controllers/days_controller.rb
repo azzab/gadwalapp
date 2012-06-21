@@ -6,8 +6,9 @@ class DaysController < ApplicationController
       @user = User.find(params[:user_id])
   end
   def index
-    @days = @user.days.all
-
+    #@days = @user.days.all
+    @days = @user.days.paginate(:page => params[:page], :per_page =>7)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @days }
@@ -44,11 +45,11 @@ class DaysController < ApplicationController
   # POST /days
   # POST /days.json
   def create
-    @day = Day.new(params[:day])
+    @day = @user.days.new(params[:day])
 
     respond_to do |format|
       if @day.save
-        format.html { redirect_to @day, notice: 'Day was successfully created.' }
+        format.html { redirect_to user_days_path(@user), notice: 'Day Awrad was successfully saved.' }
         format.json { render json: @day, status: :created, location: @day }
       else
         format.html { render action: "new" }
