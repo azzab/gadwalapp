@@ -1,7 +1,7 @@
 class Day
   include Mongoid::Document
   embedded_in :user
-  field :day, :type => Time
+  field :day, :type => Date
   field :fajer, :type => String
   field :zuhr, :type => String
   field :asr, :type => String

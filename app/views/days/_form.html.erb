@@ -4,7 +4,7 @@
 
   <div class="form-inputs">
     
-    <%= f.input :day , :as => :date%>
+    <%= f.input :day ,:input_html => { :value => DateTime.now.to_date-1  } %>
     <%= f.input :fajer, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
     <%= f.input :zuhr, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
     <%= f.input :asr, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>

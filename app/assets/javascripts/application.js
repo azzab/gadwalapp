@@ -11,6 +11,10 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.ui.all
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+$('#day_day').datepicker({
+    format: 'mm-dd-yyyy'
+});
