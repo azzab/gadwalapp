@@ -1,0 +1,45 @@
+<h1>Listing days</h1>
+
+<table>
+  <tr>
+    <th>Day</th>
+    <th>Fajer</th>
+    <th>Zuhr</th>
+    <th>Asr</th>
+    <th>Maghrib</th>
+    <th>Isha</th>
+    <th>Quran</th>
+    <th>Reading</th>
+    <th>Sonan</th>
+    <th>Seyam</th>
+    <th>Qeyam</th>
+    <th>Quranquantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @days.each do |day| %>
+  <tr>
+    <td><%= day.day %></td>
+    <td><%= day.fajer %></td>
+    <td><%= day.zuhr %></td>
+    <td><%= day.asr %></td>
+    <td><%= day.maghrib %></td>
+    <td><%= day.isha %></td>
+    <td><%= day.quran %></td>
+    <td><%= day.reading %></td>
+    <td><%= day.sonan %></td>
+    <td><%= day.seyam %></td>
+    <td><%= day.qeyam %></td>
+    <td><%= day.quranQuantity %></td>
+    <td><%= link_to 'Show', day %></td>
+    <td><%= link_to 'Edit', edit_day_path(day) %></td>
+    <td><%= link_to 'Destroy', day, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Day', new_user_day_path %>

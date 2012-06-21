@@ -1,0 +1,23 @@
+<%= simple_form_for(@day) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    
+    <%= f.input :day , :as => :date%>
+    <%= f.input :fajer, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
+    <%= f.input :zuhr, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
+    <%= f.input :asr, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
+    <%= f.input :maghrib, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
+    <%= f.input :isha, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
+    <%= f.input :quran,:as => :radio_buttons %>
+    <%= f.input :reading,:as => :radio_buttons %>
+    <%= f.input :sonan , :collection =>  [0,2, 4, 6,8,10,12,13,15]%>
+    <%= f.input :seyam %>
+    <%= f.input :qeyam , :collection => ['rob3een', '7ezb', 'juz2','more than juz2'] %>
+    <%= f.input :quranQuantity, :collection => ['rob3een', '7ezb', 'juz2','more than juz2'] %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
