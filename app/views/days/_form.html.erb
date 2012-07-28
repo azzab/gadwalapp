@@ -10,12 +10,14 @@
     <%= f.input :asr, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
     <%= f.input :maghrib, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
     <%= f.input :isha, :collection => ['kada2', '7ader', 'gama3ah','masged'] %>
-    <%= f.input :quran,:as => :radio_buttons %>
-    <%= f.input :reading,:as => :radio_buttons %>
     <%= f.input :sonan , :collection =>  [0,2, 4, 6,8,10,12,13,15]%>
-    <%= f.input :seyam %>
     <%= f.input :qeyam , :collection => ['rob3een', '7ezb', 'juz2','more than juz2'] %>
-    <%= f.input :quranQuantity, :collection => ['rob3een', '7ezb', 'juz2','more than juz2'] %>
+    <%= f.input :quranQuantity, :collection => ['rob3een', '7ezb', 'juz2','2 Juz2','3 Juz2','4 Juz2'] %>
+    <%= f.input :reading,:as => :radio_buttons %>
+    <%= f.input :seyam,:as => :radio_buttons %>
+    <%= f.input :comments%>
+    
+ 
   </div>
 
   <div class="form-actions">
